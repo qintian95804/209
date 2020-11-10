@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/zhuce.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <div class="wrapys">
+        <div class="wrap">
+            <a href="jingdong.html"><img src="img/101.png"></a>
+            <b></b>
+            <div>
+                已有账号？<span>请登陆<i class="glyphicon glyphicon-menu-right"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="sation">
+        <div class="diyibu">
+            <div class="sanbuzou">
+                <div class="yibu">
+                    <div>1</div>
+                    <p>验证手机号</p>
+                </div>
+                <div class="yizou"></div>
+                <div class="erbu">
+                    <div>2</div>
+                    <p>填写账号信息</p>
+                </div>
+                <div class="erzou"></div>
+                <div class="sanbu">
+                    <div>3</div>
+                    <p>注册成功</p>
+                </div>
+            </div>
+            <div class="yanzheng">
+                <div class="yan">
+                    <div>中国 0086<i class="glyphicon glyphicon-menu-down"></i></div>
+                    <input type="text">
+                    <span class="name">格式错误</span>
+                    <span class="namo">手机号可用</span>
+                </div>
+                <button class="btn">点击按钮进行验证</button>
+                <button class="btn1">下一步</button>
+            </div>
+            <div class="qita">
+                <div class="qiye"><a href="https://reg.jd.com/e/regPage?source=biguser&tgId=S-qtktaHl2k"><i><img src="../img/107.png"></i>企业用户注册</a></div>
+                <div class="haiwai"><a href="https://reg.jd.com/p/regPage?source=IBG&ReturnUrl=http%3A//hk.jd.com/"><i><img src="../img/107.png"></i>海外用户注册</a></div>
+            </div>
+        </div>
+        <div class="dierbu">
+            <div class="sanbuzou">
+                <div class="yibu">
+                    <div>1</div>
+                    <p>验证手机号</p>
+                </div>
+                <div class="yizou"></div>
+                <div class="erbu">
+                    <div>2</div>
+                    <p>填写账号信息</p>
+                </div>
+                <div class="erzou"></div>
+                <div class="sanbu">
+                    <div>3</div>
+                    <p>注册成功</p>
+                </div>
+            </div>
+            <div class="lie">　请输入账号:　<input class="zh" type="text"></div>
+            <div class="lie">　请输入密码:　<input class="mi" type="password"></div>
+            <div class="lie">　请再次输入:　<input class="zc" type="password"></div>
+            <div class="lie">请输入验证码:　<input class="yz" type="text"><span class="simite"></span></div>
+            <div class="lie"><button class="zhuce">注册</button></div>
+        </div>
+    </div>
+    <div class="foo">
+        <ul>
+            <li><a href="">关于我们</a></li>
+            <li></li>
+            <li><a href="">联系我们</a></li>
+            <li></li>
+            <li><a href="">人才招聘</a></li>
+            <li></li>
+            <li><a href="">商家入驻</a></li>
+            <li></li>
+            <li><a href="">广告服务</a></li>
+            <li></li>
+            <li><a href="">手机京东</a></li>
+            <li></li>
+            <li><a href="">友情链接</a></li>
+            <li></li>
+            <li><a href="">销售联盟</a></li>
+            <li></li>
+            <li><a href="">京东社区</a></li>
+            <li></li>
+            <li><a href="">京东公益</a></li>
+            <li></li>
+            <li><a href="">English Site</a></li>
+        </ul>
+        <h6>Copyright © 2004-2020  京东JD.com 版权所有</h6>
+    </div>
+    <div class="div">注册成功，请登陆<br><button class="queding">确定</button></div>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function(){
+            function f4(){
+                for(var i = 0; i < 10;i++){
+                    var a = parseInt(Math.random()*10)
+                    var b = parseInt(Math.random()*10)
+                    var c = parseInt(Math.random()*10)
+                    var d = parseInt(Math.random()*10)
+                }
+                return ""+a+b+c+d;
+            }
+            $(".simite").text(f4());
+            $(".simite").click(function(){
+                // function f4(){
+                //     for(var i = 0; i < 10;i++){
+                //         var a = parseInt(Math.random()*10)
+                //         var b = parseInt(Math.random()*10)
+                //         var c = parseInt(Math.random()*10)
+                //         var d = parseInt(Math.random()*10)
+                //     }
+                //     return ""+a+b+c+d;
+                // }
+            $(".simite").text(f4());
+            })
+            $(".wrap>div").find("span").click(function(){
+                window.location.href="./denglu.html";
+            });
+            $(".btn").click(function(){
+                var phone = $(".yan").find("input").val();
+                if((/^1[3456789]\d{9}$/.test(phone))){
+                    $(".namo").css("display","block");
+                    $(".name").css("display","none");
+                }else{
+                    $(".namo").css("display","none");
+                    $(".name").css("display","block");
+                }
+                $(".btn1").click(function(){
+                    if((/^1[3456789]\d{9}$/.test(phone))){
+                        $(".diyibu").css("display","none");
+                        $(".dierbu").css("display","block");
+                    }else{
+                        alert("请输入正确的手机号")
+                    }
+                })
+            });
+            $(".zhuce").click(function(){
+                var zh = $(".zh").val();
+                var mi = $(".mi").val();
+                var zc = $(".zc").val();
+                var yz = $(".yz").val();
+                if(!/^[a-z0-9_-]{3,16}$/.test(zh)){
+                    alert("账号格式错误")
+                    return false;
+                };
+                if(!/^[a-z0-9_-]{6,18}$/.test(mi)){
+                    alert("密码格式错误")
+                    return false;
+                };
+                if(mi != zc){
+                    alert("两次密码不一致")
+                    return false;
+                };
+                var stop = $(".simite").text();
+                var yz = $(".yz").val();
+                if(yz != stop){
+                    alert("验证码错误");
+                    return false;
+                }
+                $.get("http://jx.xuzhixiang.top/ap/api/reg.php",{
+                    username:zh,
+                    password:mi
+                },data =>{
+                    if(data.code == 1){
+                        $(".div").css("display","block");
+                        $(".queding").click(function(){
+                            window.location.href="http://localhost:8080/denglu.html";
+                        });
+                    }else{
+                        alert("用户名已存在");
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>

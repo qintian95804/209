@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/denglu.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <div class="wrap">
+        <a href="./jingdong.html"><img src="../img/101.png"></a>
+        <b></b>
+        <span>
+            <a href="https://surveys.jd.com/index.php?r=survey/index/sid/568245/lang/zh-Hans">
+                <img src="../img/102.png">
+                登录页面，调查问卷
+            </a>
+        </span>
+    </div>
+    <div class="tishiys">
+        <div class="tishi"><span class="glyphicon glyphicon-time"></span>
+            依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！ 新版《京东隐私政策》已上线，将更有利于保护您的个人隐私。</div>
+    </div>
+    <div class="logoys">
+        <div class="logo">
+            <div class="yemian">
+                <div class="fang">
+                    <span class="glyphicon glyphicon-time"></span>
+                    京东不会以任何理由要求您转账汇款，谨防诈骗。
+                </div>
+                <div class="saoma">扫码登陆</div>
+                <div class="zhanghu">账户登录</div>
+                <div class="erwei">
+                    <img src="../img/103.png">
+                    <p>打开<a href="https://app.jd.com/">手机京东</a> 扫描二维码</p>
+                    <ul>
+                        <li><i><img src="../img/104.png"></i>免输入</li>
+                        <li><i><img class="tu2" src="../img/104.png"></i>更快</li>
+                        <li><i><img class="tu3" src="../img/104.png"></i>更安全</li>
+                    </ul>
+                    <div class="tengxun">
+                        <a href="https://graph.qq.com/oauth2.0/show?which=Login&display=pc&response_type=code&state=4844EEB9EDAE4F83FD957928B6C6757715B44ACB5103B96926645468C291FA2ABB9F253C28050DE56FEFD6DA23859060&client_id=100273020&redirect_uri=https%3A%2F%2Fqq.jd.com%2Fnew%2Fqq%2Fcallback.action%3Fview%3Dnull%26uuid%3D60393b342d84490dbce0fa3bcd8a8359"><i><img src="../img/105.png"></i> 　QQ</a><span>|</span>
+                        <a class="wei" href="#"><i><img src="../img/105.png"></i> 　微信</a>
+                        <a class="none" href="https://reg.jd.com/p/regPage?ignore=1"><i><img src="../img/106.png"></i> 　立即注册</a>
+                    </div>
+                </div>
+                <div class="denglu">
+                    <div class="zhanghao"><div><img src="img/106.png"></div><input class="zh" type="text"></div>
+                    <div class="mima"><div><img src="img/106.png"></div><input class="mi" type="password"></div>
+                    <a href="https://aq.jd.com/process/findPwd?s=1">忘记密码</a>
+                    <button class="buutn">登　陆</button>
+                    <div class="tengxun">
+                        <a href="https://graph.qq.com/oauth2.0/show?which=Login&display=pc&response_type=code&state=4844EEB9EDAE4F83FD957928B6C6757715B44ACB5103B96926645468C291FA2ABB9F253C28050DE56FEFD6DA23859060&client_id=100273020&redirect_uri=https%3A%2F%2Fqq.jd.com%2Fnew%2Fqq%2Fcallback.action%3Fview%3Dnull%26uuid%3D60393b342d84490dbce0fa3bcd8a8359"><i><img src="../img/105.png"></i> 　QQ</a><span>|</span>
+                        <a class="wei" href="#"><i><img src="../img/105.png"></i> 　微信</a>
+                        <a class="none" href="https://reg.jd.com/p/regPage?ignore=1"><i><img src="../img/106.png"></i> 　立即注册</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="foo">
+        <ul>
+            <li><a href="">关于我们</a></li>
+            <li></li>
+            <li><a href="">联系我们</a></li>
+            <li></li>
+            <li><a href="">人才招聘</a></li>
+            <li></li>
+            <li><a href="">商家入驻</a></li>
+            <li></li>
+            <li><a href="">广告服务</a></li>
+            <li></li>
+            <li><a href="">手机京东</a></li>
+            <li></li>
+            <li><a href="">友情链接</a></li>
+            <li></li>
+            <li><a href="">销售联盟</a></li>
+            <li></li>
+            <li><a href="">京东社区</a></li>
+            <li></li>
+            <li><a href="">京东公益</a></li>
+            <li></li>
+            <li><a href="">English Site</a></li>
+        </ul>
+        <h6>Copyright © 2004-2020  京东JD.com 版权所有</h6>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function(){
+            $(".buutn").click(function(){
+                var zh = $(".zh").val();
+                var mi = $(".mi").val();
+            $.get("http://jx.xuzhixiang.top/ap/api/login.php",{
+                username:zh,
+                password:mi
+            },data =>{
+                if(data.code == 0 || zh == "" && mi == ""){
+                    alert("请输入正确的用户名或者密码")
+                }else if(data.code != 0 || zh == "zh" && mi == "mi"){
+                    alert("登陆成功");
+                    localStorage.setItem("username",JSON.stringify(data.data.username))
+                    localStorage.setItem("daraID",JSON.stringify(data.data.id))
+                    localStorage.setItem("token",JSON.stringify(data.data.token))
+                    window.location.href="http://localhost:8080/jingdong.html";
+                }
+            })
+            })
+        })
+    </script>
+</body>
+</html>
